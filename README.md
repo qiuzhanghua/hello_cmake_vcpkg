@@ -55,9 +55,14 @@ target_link_libraries(Hello PRIVATE fmt::fmt)
 
 5. Build
 ```powershell
+
+cmake --preset=default
+# or 
 mkdir build
 cd build
+# and
 cmake ..
+
 # 
 cmake --build .
 # or
@@ -72,3 +77,5 @@ cmake --build .
 #
 .\Release\Hello.exe 
 ```
+
+7. CMake 3.30 required
