@@ -5,10 +5,6 @@ set(CMAKE_CXX_REQUIRED ON)
 
 project(Hello)
 
-find_package(fmt CONFIG REQUIRED)
-
-add_executable(hello main.cpp)
-
 # include(FetchContent)
 # FetchContent_Declare(
 #   spdlog
@@ -16,8 +12,12 @@ add_executable(hello main.cpp)
 #   GIT_TAG v1.14.1
 # )
 # FetchContent_MakeAvailable(spdlog)
-
 find_package(spdlog CONFIG REQUIRED)
+find_package(fmt CONFIG REQUIRED)
+# include_directories(${CMAKE_SOURCE_DIR}/include)
+add_executable(hello)
+
+target_sources(hello PRIVATE src/main.cpp)
 
 target_link_libraries(hello PRIVATE fmt::fmt spdlog::spdlog)
 
